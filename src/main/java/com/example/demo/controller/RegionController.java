@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -57,5 +59,23 @@ public class RegionController {
             regionRepository.deleteById(id);
         }
         return "redirect:/region/list";
+    }
+
+
+    @GetMapping("/search")
+    public  String searchRegion(@RequestParam("searchName") String txt,
+                                RedirectAttributes attr,
+                                Model model){
+        List<Region> list = regionRepository.findByRegiondescriptionContainingOrderByRegiondescriptionDesc(txt);
+
+        if(list.isEmpty()){
+            attr.addFlashAttribute("msg","No hay anda gil");
+            return "redirect:/region/list";
+        }else{
+            model.addAttribute("lista",list);
+            return "/region/lista";
+        }
+
+
     }
 }

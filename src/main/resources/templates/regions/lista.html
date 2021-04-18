@@ -7,6 +7,13 @@
 <body>
     <h2 th:text="| Regions List |"></h2>
     <a th:href="@{/region/form}">Crear una Región</a>
+
+    <form class="form-inline mb-3" method="post" th:action="@{/region/search}">
+        <input placeholder="Search" name="searchName">
+        <button type="submit">Search</button>
+        <a class="btn btn-outline-danger" th:href="@{/region/listar}">Clear</a>
+    </form>
+
     <table>
         <thead>
             <tr>
