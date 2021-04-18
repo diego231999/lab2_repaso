@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
 <head>
     <meta charset="UTF-8">
     <title>Lista Regiones</title>
 </head>
 <body>
+    <h2 th:text="| Regions List |"></h2>
     <table>
         <thead>
             <tr>
                 <th>#</th>
-                <th></th>
-                <th>#</th>
-                <th>#</th>
+                <th>Region Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <tr th:each="region, v : ${lista}">
+                <td th:text="${v.index+1}"></td>
+                <td th:text="${region.regiondescription}"></td>
+                <td><a th:href="@{'/region/edit?id='+ ${region.regionid}}"></a></td>
+                <td><a th:href="@{'/region/delete?id='+ ${region.regionid}"></a></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
