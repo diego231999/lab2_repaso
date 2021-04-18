@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="region")
 
-public class region {
+public class Region {
     @Id
     @Column(name="RegionID")
     private String regionid;
