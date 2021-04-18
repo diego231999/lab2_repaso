@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Lista Regiones</title>
 </head>
 <body>
     <h2 th:text="| Regions List |"></h2>
+    <a th:href="@{/region/form}">Crear una Región</a>
     <table>
         <thead>
             <tr>
