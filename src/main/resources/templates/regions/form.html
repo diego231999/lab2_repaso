@@ -13,12 +13,12 @@
         <main>
             <!-- Contenido -->
             <div class="page-header text-center">
-                <h2>Nueva Distribuidora</h2>
+                <h2>Nueva Region</h2>
             </div>
             <div class="container-fluid">
-                <form method="POST" action="/region/save">
+                <form method="POST" th:action="@{/region/save}">
 
-                    <label for="regionid">Nombre</label>
+                    <label for="regionid">ID</label>
                     <input type="text" class="form-control" id="regionid" name="regionid">
 
                     <label for="regiondescription">Descripción</label>
