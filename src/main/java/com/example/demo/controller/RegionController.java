@@ -43,7 +43,7 @@ public class RegionController {
         Optional<Region> regionOptional = regionRepository.findById(id);
         if(regionOptional.isPresent()){
             Region region = regionOptional.get();
-            model.addAttribute(region);
+            model.addAttribute("region",region);
             return "/regions/edit";
         }else {
             return "redirect:/region/list";
