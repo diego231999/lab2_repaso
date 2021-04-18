@@ -11,9 +11,9 @@ import javax.persistence.Table;
 
 public class Region {
     @Id
-    @Column(name="RegionID")
+    @Column(name="regionID")
     private int regionid;
-    @Column(name="RegionDescription", nullable = false)
+    @Column(name="regiondescription", nullable = false)
     private String regiondescription;
 
 
