@@ -73,7 +73,7 @@ public class RegionController {
             return "redirect:/region/list";
         }else{
             model.addAttribute("lista",list);
-            return "/region/lista";
+            return "/regions/lista";
         }
 
 
