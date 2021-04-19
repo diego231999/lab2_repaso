@@ -62,7 +62,7 @@ public class RegionController {
     }
 
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     public  String searchRegion(@RequestParam("searchName") String txt,
                                 RedirectAttributes attr,
                                 Model model){
